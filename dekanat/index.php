@@ -43,7 +43,7 @@ class CourseManager {
         $coursesWithoutDuty = $this->courses;
         foreach ($this->students as $student) {
             foreach ($student->courses as $st_course => $st_grade) {
-                if ($coursesWithoutDuty[$st_course] && $st_grade < $this->courses[$st_course]) {
+                if (isset($coursesWithoutDuty[$st_course]) && $st_grade < $this->courses[$st_course]) {
                     unset($coursesWithoutDuty[$st_course]);
                 }
             }
